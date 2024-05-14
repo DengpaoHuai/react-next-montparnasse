@@ -1,7 +1,6 @@
 import { Movie } from "../types/movie.type";
 
 export const getAllMovies = async () => {
-  await sleep(2000);
   const response = await fetch(
     "https://crudcrud.com/api/3389182747ca46e8a9f1c348b0e14142/movies",
     {
@@ -27,12 +26,12 @@ export const createMovie = async (movie: Omit<Movie, "_id">) => {
 
 export const deleteMovie = async (id: string) => {
   const response = await fetch(
-    `https://crudcrud.com/api/2ef2be945d4b472bb0b431f600ca2535/movies/${id}`,
+    `https://crudcrud.com/api/3389182747ca46e8a9f1c348b0e14142/movies/${id}`,
     {
       method: "DELETE",
     }
   );
-  return response.json();
+  return true;
 };
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
